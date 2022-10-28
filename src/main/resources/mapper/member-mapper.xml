@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rubypaper.board.persistence.MemberDao">
+
+<insert id="insert" parameterType="com.rubypaper.board.domain.MemberVo">
+<![CDATA[
+ insert into member1026 (id, password, name, role, enabled ) 
+ values (#{id}, #{password}, #{name}, #{role}, #{enabled} )
+]]>
+</insert>
+
+<delete id="delete" parameterType="com.rubypaper.board.domain.MemberVo">
+ <![CDATA[
+ delete from member1026 where id=#{id}
+]]>
+</delete>
+
+<update id="update" parameterType="com.rubypaper.board.domain.MemberVo">
+ <![CDATA[
+ update member1026 set password=#{password}, name=#{name} 
+ where id=#{id}
+]]>
+</update>
+
+
+<select id="getMember" parameterType="com.rubypaper.board.domain.MemberVo"
+					  resultType="com.rubypaper.board.domain.MemberVo">
+ <![CDATA[
+ select * from member1026 where id=#{id}
+]]>
+</select>
+
+
+<select id="getMemberList" parameterType="com.rubypaper.board.domain.MemberVo"
+						  resultType="com.rubypaper.board.domain.MemberVo">
+ <![CDATA[
+ select * from member1026
+]]>
+</select>
+
+</mapper>

@@ -1,0 +1,34 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  
+</head>
+<body th:align="center">
+
+ <div align="center">
+<h2> 게시판 글등록 ( <a th:href="@{../index.html}">처음으로</a>) </h2>
+
+<form action="/board/updateMember.do">
+<input  type=hidden  name="id" th:value="${m.id}">
+<table border=1 >
+<tr><td> ID </td>
+	<td> [[${m.id}]] </td></tr>  
+<tr><td> 비밀번호 </td>
+	<td> <input  type=text  name="password" th:value="${m.password}"> </td></tr>  
+<tr><td> 이름 </td>
+	 <td><input  type=text  name="name" th:value="${m.name}"></td></tr>
+<tr><td> 권한 </td>
+	<td>[[${m.role}]] </td></tr>
+<tr><td> Enable </td>
+	<td>[[${m.enabled}]] </td></tr>
+<tr><td align="center" colspan=2><input  type=submit  value="수정하기"/> </td></tr>
+
+</table>
+</form>
+<br>
+<a  th:href="@{/board/getMemberList.do}">목록보기</a> &emsp;
+
+</div>
+
+</body>
+
+</html>
